@@ -35,4 +35,11 @@ public class Staff {
 	public String getSpec() {
 		return spec;
 	}
+	
+	
+	public static void  main(String args[]) {
+		
+		Staff s = new Staff(1, "sara", 12, "sara@hotmail.com", "Msc", "comsci");
+		System.out.println(s.getContact());
+	}
 }
