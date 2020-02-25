@@ -1,21 +1,55 @@
 package staff;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+
+
 public class Staff {
 	private int id;
 	private String name;
-	private int dob;
 	private String contact;
 	private String education;
 	private String spec;
+	private ArrayList<Staff> staffList = new ArrayList<Staff>();
 	
-	public Staff(int a, String b, int c, String d, String e, String f) {
-		this.id = a;
-		this.name = b;
-		this.dob = c;
-		this.contact = d;
-		this.education = e;
-		this.spec = f;		
+	
+	public Staff()	{
+		String fullLine = null;
+		  String[] splitLine = fullLine.split(",");
+		  this.id = Integer.parseInt(splitLine[0]);
+		  this.name = splitLine[1];
+		  this.contact = splitLine[2];
+		  this.education = splitLine[3];
+		  this.spec = splitLine[4];
 	}
+
+	@SuppressWarnings("null")
+	public void loadStaff() {
+		ArrayList<String> lines = null;
+		try (BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt")))	{
+			String sCurrentLine;
+			while ((sCurrentLine = br.readLine()) != null) {
+				lines.add(sCurrentLine);
+			}
+		}catch (IOException e)	{
+			e.printStackTrace();
+		}
+			
+	}
+
+	
+	
+	
+//	public Staff(int a, String b, String d, String e, String f) {
+//		this.id = a;
+//		this.name = b;
+//		this.contact = d;
+//		this.education = e;
+//		this.spec = f;		
+//	}
 	
 	public int getId() {
 		return id;
@@ -23,9 +57,7 @@ public class Staff {
 	public String getName() {
 		return name;
 	}
-	public int getDob() {
-		return dob;
-	}
+
 	public String getContact() {
 		return contact;
 	}
@@ -39,7 +71,9 @@ public class Staff {
 	
 	public static void  main(String args[]) {
 		
-		Staff s = new Staff(1, "sara", 12, "sara@hotmail.com", "Msc", "comsci");
+		Staff s = new Staff();
+		s.loadStaff();
+		System.out.println(s.getName());
 		System.out.println(s.getContact());
 	}
 }
