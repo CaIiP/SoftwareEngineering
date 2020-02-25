@@ -1,10 +1,13 @@
 package main;
 
+import staff.Staff;
+import requirements.Requirements;
+
 public class Test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Requirements requirements = new Requirements();
+		requirements.loadStaff();
+		System.out.println(requirements.toString());
 	}
-
 }

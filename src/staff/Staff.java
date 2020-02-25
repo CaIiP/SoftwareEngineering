@@ -8,23 +8,30 @@ import java.util.ArrayList;
 
 
 public class Staff {
-	private int id;
+	private String id;
 	private String name;
 	private String contact;
 	private String education;
 	private String spec;
-	private ArrayList<Staff> staffList = new ArrayList<Staff>();
 	
 	
-	public Staff()	{
-		String fullLine = null;
-		  String[] splitLine = fullLine.split(",");
-		  this.id = Integer.parseInt(splitLine[0]);
-		  this.name = splitLine[1];
-		  this.contact = splitLine[2];
-		  this.education = splitLine[3];
-		  this.spec = splitLine[4];
+	public Staff(String a, String b, String d, String e, String f) {
+		this.id = a;
+		this.name = b;
+		this.contact = d;
+		this.education = e;
+		this.spec = f;		
 	}
+	
+//	public Staff()	{
+//		String fullLine = null;
+//		  String[] splitLine = fullLine.split(",");
+//		  this.id = Integer.parseInt(splitLine[0]);
+//		  this.name = splitLine[1];
+//		  this.contact = splitLine[2];
+//		  this.education = splitLine[3];
+//		  this.spec = splitLine[4];
+//	}
 
 	@SuppressWarnings("null")
 	public void loadStaff() {
@@ -39,23 +46,18 @@ public class Staff {
 		}
 			
 	}
+	
+	public String getStaff()	{
+		String s = String.format("%s %s %s %s %s \n", this.id, this.name,  this.contact, this.education, this.spec);
+		return s;
+	}
 
 	
-	
-	
-//	public Staff(int a, String b, String d, String e, String f) {
-//		this.id = a;
-//		this.name = b;
-//		this.contact = d;
-//		this.education = e;
-//		this.spec = f;		
-//	}
-	
-	public int getId() {
-		return id;
+	public String getId() {
+		return this.id;
 	}
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public String getContact() {
@@ -68,12 +70,12 @@ public class Staff {
 		return spec;
 	}
 	
-	
-	public static void  main(String args[]) {
-		
-		Staff s = new Staff();
-		s.loadStaff();
-		System.out.println(s.getName());
-		System.out.println(s.getContact());
-	}
+//	
+//	public static void  main(String args[]) {
+//		
+//		Staff s = new Staff();
+//		s.loadStaff();
+//		System.out.println(s.getName());
+//		System.out.println(s.getContact());
+//	}
 }
