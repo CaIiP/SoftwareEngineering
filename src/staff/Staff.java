@@ -1,11 +1,5 @@
 package staff;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-
-
 
 public class Staff {
 	private String id;
@@ -14,7 +8,7 @@ public class Staff {
 	private String education;
 	private String spec;
 	
-	
+	//constructor
 	public Staff(String a, String b, String d, String e, String f) {
 		this.id = a;
 		this.name = b;
@@ -33,26 +27,27 @@ public class Staff {
 //		  this.spec = splitLine[4];
 //	}
 
-	@SuppressWarnings("null")
-	public void loadStaff() {
-		ArrayList<String> lines = null;
-		try (BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt")))	{
-			String sCurrentLine;
-			while ((sCurrentLine = br.readLine()) != null) {
-				lines.add(sCurrentLine);
-			}
-		}catch (IOException e)	{
-			e.printStackTrace();
-		}
-			
-	}
+//	@SuppressWarnings("null")
+//	public void loadStaff() {
+//		ArrayList<String> lines = null;
+//		try (BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt")))	{
+//			String sCurrentLine;
+//			while ((sCurrentLine = br.readLine()) != null) {
+//				lines.add(sCurrentLine);
+//			}
+//		}catch (IOException e)	{
+//			e.printStackTrace();
+//		}
+//			
+//	}
 	
+	//toString for Requirements toString
 	public String getStaff()	{
 		String s = String.format("%s %s %s %s %s \n", this.id, this.name,  this.contact, this.education, this.spec);
 		return s;
 	}
 
-	
+	//Getters
 	public String getId() {
 		return this.id;
 	}
@@ -69,13 +64,4 @@ public class Staff {
 	public String getSpec() {
 		return spec;
 	}
-	
-//	
-//	public static void  main(String args[]) {
-//		
-//		Staff s = new Staff();
-//		s.loadStaff();
-//		System.out.println(s.getName());
-//		System.out.println(s.getContact());
-//	}
 }

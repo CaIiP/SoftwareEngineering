@@ -10,15 +10,14 @@ import staff.Staff;
 
 public class Requirements {
 	private ArrayList<Staff> staffList;
-
-
-	//	private String[] headerNames;
 	private int numOfStaff;
 	
+	//constructor 
 	public Requirements() {
 		this.staffList = new ArrayList<Staff>();
 	}
 	
+	//reads from text file, creates staff objects, and loads into an array
 	public void loadStaff()	{
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt"));
@@ -35,6 +34,7 @@ public class Requirements {
 		}
 	}
 	
+	//toString for staffList array
 	public String toString()	{
 		String results = "";
 		for (Staff s : staffList)	{
@@ -43,6 +43,7 @@ public class Requirements {
 		return results;
 	}
 	
+	//getters
 	public ArrayList<Staff> getStaffList() {
 		return staffList;
 	}
