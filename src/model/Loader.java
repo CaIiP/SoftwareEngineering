@@ -1,20 +1,20 @@
-package requirements;
+package model;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import staff.Initialiser;
 
 public class Loader {
-	private ArrayList<Initialiser> staffList;
-	private ArrayList<Initialiser> reqList;
+	private ArrayList<Staff> staffList;
+	private ArrayList<Requirements> reqList;
 	private int numOfStaff;
 	private int numOfReqs;
 
 	//constructor 
 	public Loader() {
-		this.staffList = new ArrayList<Initialiser>();
+		this.staffList = new ArrayList<Staff>();
+		this.reqList = new ArrayList<Requirements>();
 	}
 
 	//reads from text file, creates staff objects, and loads into an array
@@ -27,7 +27,7 @@ public class Loader {
 			while ((read = br.readLine()) != null)	{
 				this.numOfStaff++;
 				String[] staffInfo = read.split(", ");
-				this.staffList.add(new Initialiser(staffInfo[0], staffInfo[1], staffInfo[2], staffInfo[3], staffInfo[4]));
+				this.staffList.add(new Staff(staffInfo[0], staffInfo[1], staffInfo[2], staffInfo[3], staffInfo[4]));
 			}
 		}catch (IOException e)	{
 			e.printStackTrace();
@@ -36,14 +36,14 @@ public class Loader {
 
 	public void loadRequirements()	{
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("Requirements.txt"));
 			String read = null;
 			//			read = br.readLine();
 			//			this.headerNames = read.split(", ");
 			while ((read = br.readLine()) != null)	{
 				this.numOfReqs++;
 				String[] reqInfo = read.split(", ");
-				this.reqList.add(new Initialiser(reqInfo[0], reqInfo[1], reqInfo[2]));
+				this.reqList.add(new Requirements(reqInfo[0], reqInfo[1], reqInfo[2], reqInfo[3]));
 			}
 		}catch (IOException e)	{
 			e.printStackTrace();
@@ -53,18 +53,22 @@ public class Loader {
 	//toString for staffList array
 	public String toString()	{
 		String results = "";
-		for (Initialiser s : staffList)	{
+		for (Staff s : staffList)	{
 			results += s.getStaff();
 		}
+		for (Requirements r : reqList)	{
+			results += r.getRequirements();
+		}
+		
 		return results;
 	}
 
 	//getters
-	public ArrayList<Initialiser> getStaffList() {
+	public ArrayList<Staff> getStaffList() {
 		return staffList;
 	}
 
-	public ArrayList<Initialiser> getReqList() {
+	public ArrayList<Requirements> getReqList() {
 		return reqList;
 	}
 

@@ -1,17 +1,14 @@
-package staff;
+package model;
 
-public class Initialiser {
+public class Staff {
 	private String id;
 	private String name;
 	private String contact;
 	private String education;
 	private String spec;
-	private String roleID;
-	private String edLvl;
-	private String department;
 	
 	//staff constructor
-	public Initialiser(String a, String b, String d, String e, String f) {
+	public Staff(String a, String b, String d, String e, String f) {
 		this.id = a;
 		this.name = b;
 		this.contact = d;
@@ -19,22 +16,10 @@ public class Initialiser {
 		this.spec = f;		
 	}
 	
-	//requirements constructor
-	public Initialiser(String rID, String ed, String dep)	{
-		this.roleID = rID;
-		this.edLvl = ed;
-		this.department = dep;
-	}
-	
-	//toString for Requirements toString
+	//toString for Staff toString
 	public String getStaff()	{
 		String s = String.format("%s %s %s %s %s \n", this.id, this.name,  this.contact, this.education, this.spec);
 		return s;
-	}
-	
-	public String getRequirements()	{
-		String t = String.format("%s %s %s \n", this.roleID, this.edLvl,  this.department);
-		return t;
 	}
 
 	//Getters
