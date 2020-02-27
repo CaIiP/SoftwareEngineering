@@ -2,12 +2,15 @@ package view;
 
 import java.util.Scanner;
 
+import model.Admin;
+import model.Loader;
 import model.Requirements;
 import model.Staff;
 
 public class View {
-	private Requirements r;
 	private Staff s;
+	private Admin a;
+	private Requirements r;
 
 	public void run()	{
 		mainMenu();
@@ -18,7 +21,7 @@ public class View {
 			pttView();	//call PTT Director view
 		}
 		if(input.equals("2"))	{
-			//			adminView();	//call Administrator view
+			adminView(r);	//call Administrator view
 		}
 		if(input.equals("3"))	{
 			cdView();	//call Class Director view
@@ -38,10 +41,13 @@ public class View {
 	}
 
 	public void adminView(Requirements r)	{
+		System.out.println("Here is a list of teaching positions that need to be filled, please select an opton;");
+		
 		System.out.println("For position " + r.getRole());
 		System.out.println("The requirements are: Degree Level - " + r.getEdLvl() + " Specialistion - " + r.getDepartment());
 		System.out.println("Candidates will be displayed individually. Please accept by pressing 1, or reject by pressing 2");
 		//call Admin method selectStaff - under construction
+		a.selectStaff(s);
 
 	}
 

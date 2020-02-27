@@ -1,4 +1,5 @@
-01, Sara Harper, sara@hotmail.com, MSc, Comp Sci
+
+01, Sara Harper, sara@hotmail.com, MSc, Comp Sci, 01, Tech 
 02, Max Johnstone, max@outlook.com, BEng, Mechanical Engineering
 03, Brian Patterson, brian@gmail.com, MEng, Biomedical Engineering
 04, John Smith, john@gmail.com, PHD, Biomedical Engineering
@@ -8,3 +9,9 @@
 08, Emily Blunt, em@gmail.com, PHD, Fashion Studies
 09, Alan Cumming, alan@gmail.com, PHD, Theatre Studies
 10, Matt Damon, matty@gmail.com, BSc, Mathematics
+[Requirements]
+01, Teaching Assistant, Masters, Comp Sci
+02, Teaching Assistant, Bachelors, Mechanical Engineering
+03, Lecturer, PHD, Biomedical Engineering
+04, Lecturer, Masters, English Literature
+[END]
