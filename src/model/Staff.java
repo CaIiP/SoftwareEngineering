@@ -6,14 +6,18 @@ public class Staff {
 	private String contact;
 	private String education;
 	private String spec;
+	private Requirements req;
+	private int reqID;
 	
 	//staff constructor
-	public Staff(String a, String b, String d, String e, String f) {
+	public Staff(String a, String b, String d, String e, String f, Requirements r) {
 		this.id = a;
 		this.name = b;
 		this.contact = d;
 		this.education = e;
-		this.spec = f;		
+		this.spec = f;
+		this.req = r;
+		
 	}
 	
 	//toString for Staff toString
@@ -42,5 +46,19 @@ public class Staff {
 	public String getSpec() {
 		return spec;
 	}
+
+	public int getReqID() {
+		return reqID;
+	}
+
+	public void setReqID(int reqID) {
+		this.reqID = reqID;
+	}
+
+	public void setRequirement(Requirements requirements) {
+		this.req = requirements;		
+	}
+	
+	
 }
 

@@ -16,9 +16,12 @@ public class Loader	{
 	private ArrayList<Staff> staffList;
 	private ArrayList<Requirements> reqList;
 	private Requirements r;
+	private Staff s;
+
 	//	private int numOfStaff;
 	private int numOfReqs;
 	private String[] i;
+
 
 	//constructor 
 	public Loader() {
@@ -60,76 +63,10 @@ public class Loader	{
 	//	}
 
 
-	//reads from text file, creates staff objects, and loads into an array
-	//	public void loadStaff()	{
-	//		try {
-	//			BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt"));
-	//			String read = br.readLine();
-	//			String section = br.readLine();
-	//			int numOfStaff = 0;
-	//			//			for(int numOfStaff = 0; this.staffList.size() == numOfStaff; numOfStaff++)	{
-	//			while(section != null)	{
-	//				while ((read = br.readLine()) !=null){
-	//					if(section.contentEquals("[Staff]"))	{
-	//						if(this.staffList.size() < 10)	{
-	//							String[] staffInfo = read.split(", ");
-	//							this.staffList.add(new Staff(staffInfo[0], staffInfo[1], staffInfo[2], staffInfo[3], staffInfo[4]));
-	//							numOfStaff = this.staffList.size() + 1;
-	//							System.out.println("Loaded staff");
-	//							System.out.println(numOfStaff);
-	//							System.out.println(this.staffList.size());
-	//						}
-	//					}
-	//				}
-	//			}
-	//		}
-	//		catch (IOException e)	{
-	//			e.printStackTrace();
-	//		}
-	//	}
 
-	//	public void loadReq()	{
-	//		try {
-	//			BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt"));
-	//			String read = br.readLine();
-	//			String section = br.readLine();
-	//			int numOfReqs = 0;
-	//			//			for(int numOfStaff = 0; this.staffList.size() == numOfStaff; numOfStaff++)	{
-	//			while(section != null)	{
-	//				while ((read = br.readLine()) !=null){
-	//					if(section.contentEquals("[Requirements]"))	{
-	//						if(this.reqList.size() < 4)	{
-	//							String[] reqInfo = read.split(", ");
-	//							this.reqList.add(new Requirements(reqInfo[0], reqInfo[1], reqInfo[2], reqInfo[3]));
-	//							numOfReqs = this.reqList.size() + 1;
-	//							System.out.println("Loaded reqs");
-	////							System.out.println(numOfStaff);
-	//							System.out.println(this.reqList.size());
-	//						}
-	//					}
-	//				}
-	//			}
-	//		}
-	//		catch (IOException e)	{
-	//			e.printStackTrace();
-	//		}
-	//	}
-
-	//	public void loadRequirements()	{
-	//		try {
-	//			BufferedReader br = new BufferedReader(new FileReader("Requirements.txt"));
-	//			String read = null;
-	//			//			read = br.readLine();
-	//			//			this.headerNames = read.split(", ");
-	//			while ((read = br.readLine()) != null)	{
-	//				
-	//				String[] reqInfo = read.split(", ");
-	//				this.reqList.add(new Requirements(reqInfo[0], reqInfo[1], reqInfo[2], reqInfo[3]));
-	//			}
-	//		}catch (IOException e)	{
-	//			e.printStackTrace();
-	//		}
-	//	}
+	public boolean estaEnArray(int numero,String[] info){	
+		return Arrays.asList(info).contains(numero);
+	} 
 
 	public void load()	{
 		try {
@@ -137,9 +74,11 @@ public class Loader	{
 			String read = null;
 			while ((read = br.readLine()) != null)	{
 				String[] info = read.split(",");
-				System.out.println(Arrays.toString(info));
-//				this.staffList.add(new Staff(info[0], info[1], info[2], info[3], info[4]));
-//				this.reqList.add(new Requirements(info[5], info[6], info[7], info[8]));
+				int size = info.length;
+				this.staffList.add(new Staff(info[0], info[1], info[2], info[3], info[4], null));
+				if(size > 6){
+					this.reqList.add(new Requirements((info[6]), info[7], info[8], info[9]));
+				}
 			}
 		}
 		catch (IOException e)	{
@@ -149,19 +88,111 @@ public class Loader	{
 
 
 
-	//toString for staffList array
-//	public String toString()	{
-//		String results = "";
-//		for (Staff s : staffList)	{
-//			results += s.getStaff();
+
+//	//reads from text file, creates staff objects, and loads into an array
+//	public void loadStaff()	{
+//		try {
+//			BufferedReader br = new BufferedReader(new FileReader("PermanentInfo.txt"));
+//			String read = null;
+//			//			read = br.readLine();
+//			//			this.headerNames = read.split(", ");
+//			while ((read = br.readLine()) != null)	{
+//				String[] staffInfo = read.split(", ");
+//				this.staffList.add(new Staff(staffInfo[0], staffInfo[1], staffInfo[2], staffInfo[3], staffInfo[4], null));
+//			}
+//		}catch (IOException e)	{
+//			e.printStackTrace();
 //		}
-//		for (Requirements r : reqList)	{
-//			results += r.getRequirements();
-//		}
+//	}
 //
-//		return results;
+//	public void loadRequirements()	{
+//		try {
+//			BufferedReader br = new BufferedReader(new FileReader("Requirements.txt"));
+//			String read = null;
+//			//			read = br.readLine();
+//			//			this.headerNames = read.split(", ");
+//			while ((read = br.readLine()) != null)	{
+//				String[] reqInfo = read.split(", ");
+//				this.reqList.add(new Requirements( Integer.parseInt(reqInfo[0]), reqInfo[1], reqInfo[2], reqInfo[3]));
+//			}
+//		}catch (IOException e)	{
+//			e.printStackTrace();
+//		}
 //	}
 
+
+	//	public void load()	{
+	//		try {
+	//			BufferedReader br = new BufferedReader(new FileReader("allinfo.csv"));
+	//			String read = null;
+	//			while ((read = br.readLine()) != null)	{
+	//				String[] info = read.split(",");
+	//				System.out.println(Arrays.toString(info));
+	////				this.staffList.add(new Staff(info[0], info[1], info[2], info[3], info[4]));
+	////				this.reqList.add(new Requirements(info[5], info[6], info[7], info[8]));
+	//			}
+	//		}
+	//		catch (IOException e)	{
+	//			e.printStackTrace();
+	//		}
+	//	}
+
+
+
+	//toString for staffList array
+	public String toStringStaff()	{
+		String results = "";
+		for (Staff s : staffList)	{
+			results += s.getStaff();
+		}
+		return results;
+	}
+
+
+
+	public Staff getStaff(int index)	{
+		s = staffList.get(index);
+		return s;
+	}
+
+
+	public Requirements getRequirement(int index)	{
+		r = reqList.get(index);
+		return r;
+	}
+
+	public String print(int index)	{
+		String results = "";
+		r = reqList.get(index);
+		for (Staff s : r.getAllocatedStaff())	{
+			results += s.getStaff();
+		}
+		return results;
+	}
+
+	public String toStringStaff1(int index)	{
+		String results = "";
+		s = staffList.get(index);
+		results = s.getStaff();
+		return results;
+	}
+
+
+	public String toStringReqs()	{
+		String results = "";
+		for (Requirements r : reqList)	{
+			results += r.getRequirements();
+		}
+		return results;
+	}
+
+	public String toStringReqs(int index)	{
+		String results = "";
+		r = reqList.get(index);
+		results = r.getRequirements();
+
+		return results;
+	}
 	//getters
 	public ArrayList<Staff> getStaffList() {
 		return staffList;
