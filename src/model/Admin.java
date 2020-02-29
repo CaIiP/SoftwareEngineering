@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Admin {
-	private Staff staff;
-	private ArrayList<Staff> selectedStaff;
+	
+
 	private Loader l;
 
 
 	public Admin()	{
-		this.selectedStaff = new ArrayList<Staff>();
 
 	}
 	//method to select staff for a role
@@ -28,7 +27,10 @@ public class Admin {
 			//System.out.println("Candidates will be displayed individually. Please accept by pressing 1, or reject by pressing 2");
 			//call Admin method selectStaff - under construction
 			staffCycle(l, i);
+			System.out.println("Job Confirmed:");
 			System.out.println(l.print(i));
+			System.out.println("Training Confirmed:");
+			System.out.println(l.printTraining(i));
 			//System.out.println(l.getRequirement(i).print());
 			System.out.println("Made it");
 		}
@@ -51,8 +53,9 @@ public class Admin {
 		switch (input) {
 		case "1":
 			r.addStaff(st);
-			//st.setReqID();
 			System.out.println("YES");
+			System.out.println("Does Candidate reqiure training. Please accept by pressing 1, or reject by pressing 2");
+			training(st, r);
 			break;
 		case "2":
 			System.out.println("NO");
@@ -63,14 +66,28 @@ public class Admin {
 			break;
 		}
 	} 
-
-
-	public String toString()	{
-		String results = "";
-		for (Staff s : selectedStaff)	{
-			results += s.getStaff();
+	
+	
+	
+	private void training(Staff st, Requirements r) {
+		Scanner s = new Scanner(System.in); 
+		String input = "";
+		input = s.nextLine();
+		switch (input) {
+		case "1":
+			r.addTraining(st);
+			System.out.println("Training Accepted");
+			break;
+		case "2":
+			System.out.println("Training Rejected");
+			break;
+		default:
+			System.out.println("You must select a value of either 1 or 2");
+			training(st, r);
+			break;
 		}
-		return results;
 	}
+
+	
 }
 

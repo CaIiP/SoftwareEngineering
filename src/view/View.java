@@ -15,6 +15,7 @@ public class View {
 	public void run()	{
 		mainMenu();
 		Loader l = new Loader();
+	
 		a = new Admin();
 		Scanner s = new Scanner(System.in);
 		String input = "";
@@ -29,16 +30,13 @@ public class View {
 
 
 		}
-		if(input.equals("3"))	{
-			cdView();	//call Class Director view
-		}
+		
 	}
 
 	public void mainMenu()	{
 		System.out.println("Please select user profile using corresponding number:");
 		System.out.println("1. PTT Director");
 		System.out.println("2. Administrator");
-		System.out.println("3. Class Director");
 		System.out.println("Enter number here;");
 	}
 
@@ -65,10 +63,7 @@ public class View {
 		System.out.println(a.toString());
 	}
 
-	public void cdView()	{
-		System.out.println("Once teaching requirements have been confirmed, press 1 to upload file");
-		//method that calls a scanner and a read function for the file containing teaching requirements
-	}
+
 	
 	public void adminScanner()	{
 		

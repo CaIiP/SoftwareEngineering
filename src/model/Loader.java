@@ -169,6 +169,17 @@ public class Loader	{
 		}
 		return results;
 	}
+	
+	
+
+	public String printTraining(int index)	{
+		String results = "";
+		r = reqList.get(index);
+		for (Staff s : r.getAllocatedTraining())	{
+			results += s.getStaff();
+		}
+		return results;
+	}
 
 	public String toStringStaff1(int index)	{
 		String results = "";
