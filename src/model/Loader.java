@@ -18,19 +18,15 @@ public class Loader {
 	private Requirements r;
 	private Staff s;
 
-	// private int numOfStaff;
-
-	
-
 	// constructor
 	public Loader() {
 		this.staffList = new ArrayList<Staff>();
 		this.reqList = new ArrayList<Requirements>();
 	}
 
-	public boolean isInArray(int number, String[] info) {
-		return Arrays.asList(info).contains(number);
-	}
+//	public boolean isInArray(int number, String[] info) {
+//		return Arrays.asList(info).contains(number);
+//	}
 
 	public void load() {
 		try {

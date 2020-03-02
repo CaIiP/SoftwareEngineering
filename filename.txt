@@ -1,2 +1,34 @@
+1  Teaching Assistant  Masters  Comp Sci 
+6  Angelina Jolie  angie@gmail.com  PHD  Archaeology 
+YES
+Training Accepted
+7  Steve Buscemi  stevie@gmail.com  MA  Business Studies 
+YES
+Training Rejected
+
+2  Teaching Assistant  Bachelors  Mechanical Engineering 
+
+3  Lecturer  PHD  Biomedical Engineering 
+
+4  Lecturer  Masters  English Literature 
 
 PTT Director Decision:
+1  Teaching Assistant  Masters  Comp Sci 
+6  Angelina Jolie  angie@gmail.com  PHD  Archaeology 
+YES
+
+Accepted by PTT Director
+Training Accepted
+
+Training Accepted by PTT Director
+7  Steve Buscemi  stevie@gmail.com  MA  Business Studies 
+YES
+
+Accepted by PTT Director
+Training Rejected
+
+2  Teaching Assistant  Bachelors  Mechanical Engineering 
+
+3  Lecturer  PHD  Biomedical Engineering 
+
+4  Lecturer  Masters  English Literature 
