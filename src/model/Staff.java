@@ -7,7 +7,6 @@ public class Staff {
 	private String education;
 	private String spec;
 	private Requirements req;
-	private int reqID;
 
 	// staff constructor
 	public Staff(String a, String b, String d, String e, String f, Requirements r) {
@@ -46,15 +45,7 @@ public class Staff {
 	public String getSpec() {
 		return spec;
 	}
-
-	public int getReqID() {
-		return reqID;
-	}
-
-	public void setReqID(int reqID) {
-		this.reqID = reqID;
-	}
-
+	
 	public void setRequirement(Requirements requirements) {
 		this.req = requirements;
 	}

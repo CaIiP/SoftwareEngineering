@@ -55,7 +55,7 @@ public class Admin {
 					"Candidates will be displayed individually. Please accept by pressing 1, or reject by pressing 2");
 			Staff st = l.getStaff(i);
 			Requirements r = l.getRequirement(reqindex);
-			System.out.println(l.toStringStaff1(i));
+			System.out.println(l.toStringStaff(i));
 			staffScanner(i, st, r, bw, l);
 		}
 	}
@@ -69,7 +69,7 @@ public class Admin {
 			r.addStaff(st);
 			System.out.println("YES");
 			System.out.println("Does Candidate require training. Please accept by pressing 1, or reject by pressing 2");
-			bw.write(l.toStringStaff1(i));
+			bw.write(l.toStringStaff(i));
 			bw.write("YES\n");
 			training(st, r, bw);
 

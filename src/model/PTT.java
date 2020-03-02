@@ -12,7 +12,7 @@ import java.io.FileWriter;
 public class PTT {
 	private Loader l;
 
-	public static void reedFile(String file) throws FileNotFoundException, IOException {
+	public static void readFile(String file) throws FileNotFoundException, IOException {
 		String read;
 		FileReader f = new FileReader(file);
 		BufferedReader b = new BufferedReader(f);
@@ -94,7 +94,7 @@ public class PTT {
 	}
 
 	public void runPTT() throws IOException {
-		reedFile("filename.txt");
+		readFile("filename.txt");
 	}
 
 }

@@ -19,8 +19,8 @@ public class Loader {
 	private Staff s;
 
 	// private int numOfStaff;
-	private int numOfReqs;
-	private String[] i;
+
+	
 
 	// constructor
 	public Loader() {
@@ -28,8 +28,8 @@ public class Loader {
 		this.reqList = new ArrayList<Requirements>();
 	}
 
-	public boolean estaEnArray(int numero, String[] info) {
-		return Arrays.asList(info).contains(numero);
+	public boolean isInArray(int number, String[] info) {
+		return Arrays.asList(info).contains(number);
 	}
 
 	public void load() {
@@ -50,13 +50,13 @@ public class Loader {
 	}
 
 	// toString for staffList array
-	public String toStringStaff() {
-		String results = "";
-		for (Staff s : staffList) {
-			results += s.getStaff();
-		}
-		return results;
-	}
+//	public String toStringStaff() {
+//		String results = "";
+//		for (Staff s : staffList) {
+//			results += s.getStaff();
+//		}
+//		return results;
+//	}
 
 	public Staff getStaff(int index) {
 		s = staffList.get(index);
@@ -86,7 +86,7 @@ public class Loader {
 		return results;
 	}
 
-	public String toStringStaff1(int index) {
+	public String toStringStaff(int index) {
 		String results = "";
 		s = staffList.get(index);
 		results = s.getStaff();
