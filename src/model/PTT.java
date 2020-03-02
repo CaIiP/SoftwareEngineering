@@ -10,49 +10,49 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 public class PTT {
-	private Loader l;
+
 
 	public static void readFile(String file) throws FileNotFoundException, IOException {// loading file to be approved by admin
 		String read;
-		FileReader f = new FileReader(file);
-		BufferedReader b = new BufferedReader(f);
+		FileReader fileReader = new FileReader(file);
+		BufferedReader b = new BufferedReader(fileReader);
 		int count = 0;
-		BufferedWriter bw = null;
-		FileWriter fw = null;
+		BufferedWriter bufferedWriter = null;
+		FileWriter fileWriter = null;
 		File files = new File(file);
 		if (!files.exists()) {
 			files.createNewFile();
 		}
-		fw = new FileWriter(files.getAbsoluteFile(), true);
-		bw = new BufferedWriter(fw);
-		bw.write("\nPTT Director Decision:\n");//Director decisions
+		fileWriter = new FileWriter(files.getAbsoluteFile(), true);
+		bufferedWriter = new BufferedWriter(fileWriter);
+		bufferedWriter.write("\nPTT Director Decision:\n");//Director decisions
 		int decision = 0;
 		while ((read = b.readLine()) != null) {// when txt file is not empty run
 
 			if ("Training Accepted".equals(read) || "Training Rejected".equals(read)) {// training accepted or rejected by admin for staff
 				if (decision != 1) {
 					System.out.println(read);
-					bw.write(read + "\n");
+					bufferedWriter.write(read + "\n");
 				}
 			} else {
 				System.out.println(read);
-				bw.write(read + "\n");
+				bufferedWriter.write(read + "\n");
 			}
 
 			if ("YES".equals(read)) {// accepted by admin ask director to approve or reject
 				System.out.println("Press 1 to approve or 2 to decline");
-				Scanner s = new Scanner(System.in);
+				Scanner scanner = new Scanner(System.in);
 				String input = "";
-				input = s.nextLine();
+				input = scanner.nextLine();
 				switch (input) {
 				case "1"://accepted by director
 					System.out.println("Accepted by PTT Director");
-					bw.write("\nAccepted by PTT Director\n");
+					bufferedWriter.write("\nAccepted by PTT Director\n");
 					decision = 0;
 					break;
 				case "2"://rejected by director
 					System.out.println("Not Accepted by PTT Director");
-					bw.write("\nNot Accepted by PTT Director\n");
+					bufferedWriter.write("\nNot Accepted by PTT Director\n");
 					decision = 1;
 					break;
 				default:
@@ -65,17 +65,17 @@ public class PTT {
 			if ("Training Accepted".equals(read)) {// if staff accepted by training by admin ask director to approve or reject training
 				if (decision != 1) {//if director has approved candidate for job and they are accepted by admin for training. ask director to approve or reject it.
 					System.out.println("Press 1 to approve or 2 to decline training");
-					Scanner s = new Scanner(System.in);
+					Scanner scanner = new Scanner(System.in);
 					String input = "";
-					input = s.nextLine();
+					input = scanner.nextLine();
 					switch (input) {
 					case "1":
 						System.out.println("Training Accepted by PTT Director");// if director accepted training
-						bw.write("\nTraining Accepted by PTT Director\n");
+						bufferedWriter.write("\nTraining Accepted by PTT Director\n");
 						break;
 					case "2":
 						System.out.println("Not Accepted Training by PTT Director");// if director rejected training
-						bw.write("\nNot Accepted Training by PTT Director\n");
+						bufferedWriter.write("\nNot Accepted Training by PTT Director\n");
 						break;
 					default:
 						System.out.println("You must select a value of either 1 or 2");
@@ -84,12 +84,12 @@ public class PTT {
 					}
 				} else {// if director rejects staff.
 					System.out.println("Not Accepted Training by PTT because the candidate was not accepted");
-					bw.write("\nNot Accepted Training by PTT because the candidate was not accepted\n");
+					bufferedWriter.write("\nNot Accepted Training by PTT because the candidate was not accepted\n");
 				}
 			}
 			count++;
 		}
-		bw.close();
+		bufferedWriter.close();
 		b.close();
 	}
 

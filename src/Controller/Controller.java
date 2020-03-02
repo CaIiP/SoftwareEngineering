@@ -7,19 +7,19 @@ import model.*;
 
 public class Controller {
 	
-	private View v;
-	private Admin a;
+	private View view;
+	private Admin admin;
 	private PTT ptt;
-	private Model m;
+	private Model model;
 	
 	
 	
 	public Controller(Model model, View view ) throws IOException {
-		this.m= model;
-		m = new Model(a, ptt);
-		this.v = view;
-		v = new View();
-		v.run();
+		this.model= model;
+		model = new Model(admin, ptt);
+		this.view = view;
+		view = new View();
+		view.run();
 	}
 	
 }

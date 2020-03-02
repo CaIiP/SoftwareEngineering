@@ -7,10 +7,10 @@ import view.View;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
-		Admin a = new Admin();
+		Admin admin = new Admin();
 		PTT ptt = new PTT();
-		View v = new View();
-		Model m = new Model(a, ptt);
-		Controller c = new Controller(m, v);
+		View view = new View();
+		Model model = new Model(admin, ptt);
+		Controller controller = new Controller(model, view);
 	}
 }

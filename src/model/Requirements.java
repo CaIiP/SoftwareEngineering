@@ -3,17 +3,17 @@ package model;
 import java.util.ArrayList;
 
 public class Requirements {
-	private String roleID;
-	private String role;
-	private String edLvl;
+	private String jobID;
+	private String jobTitle;
+	private String educationLevel;
 	private String department;
 	private ArrayList<Staff> allocatedStaff = new ArrayList<Staff>();
 	private ArrayList<Staff> allocatedTraining = new ArrayList<Staff>();
 
 	public Requirements(String rID, String r, String ed, String dep) {
-		this.roleID = rID;
-		this.role = r;
-		this.edLvl = ed;
+		this.jobID = rID;
+		this.jobTitle = r;
+		this.educationLevel = ed;
 		this.department = dep;
 	}
 
@@ -36,26 +36,18 @@ public class Requirements {
 	}
 
 	// associates staff with training
-	public void remove(Staff s) {
+	public void removeTraining(Staff s) {
 		this.allocatedTraining.remove(s);
 		s.setRequirement(null);
 	}
 
-	public String getRequirements() {
-		String t = String.format("%s %s %s %s \n", this.roleID, this.role, this.edLvl, this.department);
+	public String toStringRequirements() {
+		String t = String.format("%s %s %s %s \n", this.jobID, this.jobTitle, this.educationLevel, this.department);
 		return t;
 	}
 
-	public String getRoleID() {
-		return roleID;
-	}
-
-	public String getRole() {
-		return role;
-	}
-
-	public String getEdLvl() {
-		return edLvl;
+	public String getEducationLevel() {
+		return educationLevel;
 	}
 
 	public String getDepartment() {

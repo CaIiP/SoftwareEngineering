@@ -14,30 +14,26 @@ import java.util.Scanner;
 
 public class Loader {
 	private ArrayList<Staff> staffList;
-	private ArrayList<Requirements> reqList;
-	private Requirements r;
-	private Staff s;
+	private ArrayList<Requirements> requirmentsList;
+	private Requirements requirements;
+	private Staff staff;
 
 	// constructor
 	public Loader() {
 		this.staffList = new ArrayList<Staff>();
-		this.reqList = new ArrayList<Requirements>();
+		this.requirmentsList = new ArrayList<Requirements>();
 	}
-
-//	public boolean isInArray(int number, String[] info) {
-//		return Arrays.asList(info).contains(number);
-//	}
 
 	public void load() {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("allinfo.csv"));
+			BufferedReader bufferedReader = new BufferedReader(new FileReader("allinfo.csv"));
 			String read = null;
-			while ((read = br.readLine()) != null) {
+			while ((read = bufferedReader.readLine()) != null) {
 				String[] info = read.split(",");
 				int size = info.length;
 				this.staffList.add(new Staff(info[0], info[1], info[2], info[3], info[4], null));
 				if (size > 6) {
-					this.reqList.add(new Requirements((info[6]), info[7], info[8], info[9]));
+					this.requirmentsList.add(new Requirements((info[6]), info[7], info[8], info[9]));
 				}
 			}
 		} catch (IOException e) {
@@ -45,72 +41,57 @@ public class Loader {
 		}
 	}
 
-	// toString for staffList array
-//	public String toStringStaff() {
-//		String results = "";
-//		for (Staff s : staffList) {
-//			results += s.getStaff();
-//		}
-//		return results;
-//	}
 
-	public Staff getStaff(int index) {
-		s = staffList.get(index);
-		return s;
-	}
-
-	public Requirements getRequirement(int index) {
-		r = reqList.get(index);
-		return r;
-	}
-
-	public String print(int index) {
+//toStrings 
+	public String toStringAllocatedStaff(int index) {
 		String results = "";
-		r = reqList.get(index);
-		for (Staff s : r.getAllocatedStaff()) {
-			results += s.getStaff();
+		requirements = requirmentsList.get(index);
+		for (Staff s : requirements.getAllocatedStaff()) {
+			results += s.toStringStaff();
 		}
 		return results;
 	}
 
-	public String printTraining(int index) {
+	public String toStringAllocatedTraining(int index) {
 		String results = "";
-		r = reqList.get(index);
-		for (Staff s : r.getAllocatedTraining()) {
-			results += s.getStaff();
+		requirements = requirmentsList.get(index);
+		for (Staff s : requirements.getAllocatedTraining()) {
+			results += s.toStringStaff();
 		}
 		return results;
 	}
 
 	public String toStringStaff(int index) {
 		String results = "";
-		s = staffList.get(index);
-		results = s.getStaff();
+		staff = staffList.get(index);
+		results = staff.toStringStaff();
 		return results;
 	}
 
-	public String toStringReqs() {
+	public String toStringRequirements(int index) {
 		String results = "";
-		for (Requirements r : reqList) {
-			results += r.getRequirements();
-		}
-		return results;
-	}
-
-	public String toStringReqs(int index) {
-		String results = "";
-		r = reqList.get(index);
-		results = r.getRequirements();
+		requirements = requirmentsList.get(index);
+		results = requirements.toStringRequirements();
 
 		return results;
 	}
 
-	// getters
+// getters
+	public Staff getStaff(int index) {
+		staff = staffList.get(index);
+		return staff;
+	}
+
+	public Requirements getRequirement(int index) {
+		requirements = requirmentsList.get(index);
+		return requirements;
+	}
+
 	public ArrayList<Staff> getStaffList() {
 		return staffList;
 	}
 
-	public ArrayList<Requirements> getReqList() {
-		return reqList;
+	public ArrayList<Requirements> getRequirementsList() {
+		return requirmentsList;
 	}
 }
