@@ -1,4 +1,5 @@
 package Controller;
+import java.io.IOException;
 import view.*;
 import model.*;
 
@@ -13,7 +14,7 @@ public class Controller {
 	
 	
 	
-	public Controller(Model model, View view ) {
+	public Controller(Model model, View view ) throws IOException {
 		this.m= model;
 		m = new Model(a, ptt);
 		this.v = view;
