@@ -16,9 +16,7 @@ public class Controller {
 	
 	public Controller(Model model, View view ) throws IOException {
 		this.model= model;
-		model = new Model(admin, ptt);
 		this.view = view;
-		view = new View();
 		view.run();
 	}
 	
