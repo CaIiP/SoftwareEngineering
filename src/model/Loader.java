@@ -3,16 +3,10 @@ package model;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
 
 public class Loader {
+
 	private ArrayList<Staff> staffList;
 	private ArrayList<Requirements> requirmentsList;
 	private Requirements requirements;
@@ -24,6 +18,8 @@ public class Loader {
 		this.requirmentsList = new ArrayList<Requirements>();
 	}
 
+	// method to load staff and requirements form csv file into staflist array and
+	// requirementsList array
 	public void load() {
 		try {
 			BufferedReader bufferedReader = new BufferedReader(new FileReader("allinfo.csv"));
@@ -41,8 +37,7 @@ public class Loader {
 		}
 	}
 
-
-//toStrings 
+	// toStrings
 	public String toStringAllocatedStaff(int index) {
 		String results = "";
 		requirements = requirmentsList.get(index);
@@ -76,7 +71,7 @@ public class Loader {
 		return results;
 	}
 
-// getters
+	// getters
 	public Staff getStaff(int index) {
 		staff = staffList.get(index);
 		return staff;

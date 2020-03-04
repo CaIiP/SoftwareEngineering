@@ -10,6 +10,7 @@ public class Requirements {
 	private ArrayList<Staff> allocatedStaff = new ArrayList<Staff>();
 	private ArrayList<Staff> allocatedTraining = new ArrayList<Staff>();
 
+	// constructor
 	public Requirements(String rID, String r, String ed, String dep) {
 		this.jobID = rID;
 		this.jobTitle = r;
@@ -23,7 +24,6 @@ public class Requirements {
 		s.setRequirement(this);
 	}
 
-	// removes staff object from associated requirements object
 	public void removeStaff(Staff s) {
 		this.allocatedStaff.remove(s);
 		s.setRequirement(null);
@@ -35,15 +35,34 @@ public class Requirements {
 		s.setRequirement(this);
 	}
 
-	// associates staff with training
 	public void removeTraining(Staff s) {
 		this.allocatedTraining.remove(s);
 		s.setRequirement(null);
 	}
 
+	// toStrings
 	public String toStringRequirements() {
 		String t = String.format("%s %s %s %s \n", this.jobID, this.jobTitle, this.educationLevel, this.department);
 		return t;
+	}
+
+	public String toStringJobRequirments() {
+		String t = String.format("%s %s %s %s \n", "The Requirements are :", this.educationLevel, "in the area of",
+				this.department);
+		return t;
+	}
+
+	public String toStringJob() {
+		String t = String.format("%s %s \n", "For the Position: ", this.jobTitle);
+		return t;
+	}
+
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+	public String getJobID() {
+		return jobID;
 	}
 
 	public String getEducationLevel() {
@@ -54,6 +73,7 @@ public class Requirements {
 		return department;
 	}
 
+	// getters
 	public ArrayList<Staff> getAllocatedTraining() {
 		return allocatedTraining;
 	}

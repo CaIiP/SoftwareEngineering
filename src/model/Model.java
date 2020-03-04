@@ -1,17 +1,14 @@
 package model;
 
 public class Model {
+	private Loader loader;
 
-	
-	private  Admin a;
-	private PTT ptt;
-	private  Loader l;
+	public Model() {
 
- public Model(Admin admin, PTT pt) {
-	 this.a = admin;
-	 this.ptt = pt;
-	 Loader l = new Loader();
-	 l.load();
-	 
- }
- }
+		// load staff and requirements
+		this.loader = new Loader();
+		loader.load();
+
+	}
+
+}

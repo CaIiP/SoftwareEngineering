@@ -1,46 +1,169 @@
-1  Teaching Assistant  Masters  Comp Sci 
-1  Sara Harper  sara@hotmail.com  MSc  Comp Sci 
-YES
-Training Rejected
-4  John Smith  john@gmail.com  PHD  Biomedical Engineering 
-YES
-Training Accepted
-5  Brad Pitt  brad@gmail.com  MA  English Literature 
-YES
-Training Accepted
+For the Position:   Teaching Assistant 
+The Requirements are :  Masters in the area of  Computer Science 
+Applicants: 
 
-2  Teaching Assistant  Bachelors  Mechanical Engineering 
-5  Brad Pitt  brad@gmail.com  MA  English Literature 
-YES
-Training Rejected
-8  Emily Blunt  em@gmail.com  PHD  Fashion Studies 
-YES
-Training Accepted
+Name:                 Sara Harper         
+Applicant ID:         1                     
+Contact Info:         sara@hotmail.com     
+Education Level:      MSc                  
+Degree Subject:       Computer Science     
+Applicant Approved by Admin
+Training Rejected by Admin
 
-3  Lecturer  PHD  Biomedical Engineering 
-1  Sara Harper  sara@hotmail.com  MSc  Comp Sci 
-YES
-Training Rejected
-5  Brad Pitt  brad@gmail.com  MA  English Literature 
-YES
-Training Accepted
-6  Angelina Jolie  angie@gmail.com  PHD  Archaeology 
-YES
-Training Accepted
+------------------------------------------------------
+For the Position:   Teaching Assistant 
+The Requirements are :  Bachelors in the area of  Mechanical Engineering 
+Applicants: 
 
-4  Lecturer  Masters  English Literature 
-1  Sara Harper  sara@hotmail.com  MSc  Comp Sci 
-YES
-Training Accepted
-2  Max Johnstone  max@outlook.com  BEng  Mechanical Engineering 
-YES
-Training Accepted
-3  Brian Patterson  brian@gmail.com  MEng  Biomedical Engineering 
-YES
-Training Accepted
-7  Steve Buscemi  stevie@gmail.com  MA  Business Studies 
-YES
-Training Rejected
-8  Emily Blunt  em@gmail.com  PHD  Fashion Studies 
-YES
-Training Rejected
+Name:                 Max Johnstone       
+Applicant ID:         2                     
+Contact Info:         max@outlook.com      
+Education Level:      BEng                 
+Degree Subject:       Mechanical Engineering  
+Applicant Approved by Admin
+Training Approved by Admin
+
+
+Name:                 Brian Patterson     
+Applicant ID:         3                     
+Contact Info:         brian@gmail.com      
+Education Level:      MEng                 
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+Training Approved by Admin
+
+------------------------------------------------------
+For the Position:   Lecturer 
+The Requirements are :  PHD in the area of  Biomedical Engineering 
+Applicants: 
+
+Name:                 Brian Patterson     
+Applicant ID:         3                     
+Contact Info:         brian@gmail.com      
+Education Level:      MEng                 
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+Training Approved by Admin
+
+
+Name:                 John Smith          
+Applicant ID:         4                     
+Contact Info:         john@gmail.com       
+Education Level:      PHD                  
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+Training Rejected by Admin
+
+------------------------------------------------------
+For the Position:   Lecturer 
+The Requirements are :  Masters in the area of  English Literature 
+Applicants: 
+
+Name:                 Brad Pitt           
+Applicant ID:         5                     
+Contact Info:         brad@gmail.com       
+Education Level:      MA                   
+Degree Subject:       English Literature   
+Applicant Approved by Admin
+Training Approved by Admin
+
+
+--------------------------------------------------------
+--------------------------------------------------------
+PTT Director Decision:
+
+For the Position:   Teaching Assistant 
+The Requirements are :  Masters in the area of  Computer Science 
+Applicants: 
+
+Name:                 Sara Harper         
+Applicant ID:         1                     
+Contact Info:         sara@hotmail.com     
+Education Level:      MSc                  
+Degree Subject:       Computer Science     
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Rejected by Admin
+
+------------------------------------------------------
+For the Position:   Teaching Assistant 
+The Requirements are :  Bachelors in the area of  Mechanical Engineering 
+Applicants: 
+
+Name:                 Max Johnstone       
+Applicant ID:         2                     
+Contact Info:         max@outlook.com      
+Education Level:      BEng                 
+Degree Subject:       Mechanical Engineering  
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Approved by Admin
+
+Not Approved Training by PTT Director
+
+
+Name:                 Brian Patterson     
+Applicant ID:         3                     
+Contact Info:         brian@gmail.com      
+Education Level:      MEng                 
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Approved by Admin
+
+Training Approved by PTT Director
+
+------------------------------------------------------
+For the Position:   Lecturer 
+The Requirements are :  PHD in the area of  Biomedical Engineering 
+Applicants: 
+
+Name:                 Brian Patterson     
+Applicant ID:         3                     
+Contact Info:         brian@gmail.com      
+Education Level:      MEng                 
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Approved by Admin
+
+Not Approved Training by PTT Director
+
+
+Name:                 John Smith          
+Applicant ID:         4                     
+Contact Info:         john@gmail.com       
+Education Level:      PHD                  
+Degree Subject:       Biomedical Engineering  
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Rejected by Admin
+
+------------------------------------------------------
+For the Position:   Lecturer 
+The Requirements are :  Masters in the area of  English Literature 
+Applicants: 
+
+Name:                 Brad Pitt           
+Applicant ID:         5                     
+Contact Info:         brad@gmail.com       
+Education Level:      MA                   
+Degree Subject:       English Literature   
+Applicant Approved by Admin
+
+Accepted by PTT Director
+
+Training Approved by Admin
+
+Not Approved Training by PTT Director
+

@@ -12,25 +12,26 @@ import model.PTT;
 public class View {
 
 	private Admin admin;
-	
 
 	public void run() throws IOException {
 		mainMenu();
 		Loader loader = new Loader();
 		PTT ptt = new PTT();
-
 		admin = new Admin();
 		Scanner scanner = new Scanner(System.in);
 		String input = "";
 		input = scanner.nextLine();
+
 		if (input.equals("1")) {
 			pttView(ptt); // call PTT Director view
 		}
 		if (input.equals("2")) {
-			admin.adminRun(loader);
+			admin.adminRun(loader); // run admin
+			System.out.println("No more applicants remaining");
 		}
 	}
 
+	// displays start menu options for users
 	public void mainMenu() {
 		System.out.println("Please select user profile using corresponding number:");
 		System.out.println("1. PTT Director");
@@ -41,8 +42,6 @@ public class View {
 	public void pttView(PTT ptt) throws IOException {
 		System.out.println("Here is a list of submissions from the administrator which require approval: ");
 		ptt.runPTT();
-
-
 		System.out.println("No more submissions remaining");
 	}
 
